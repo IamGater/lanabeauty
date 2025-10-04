@@ -2,7 +2,7 @@ body {
   margin: 0;
   font-family: Poppins, sans-serif;
   background: #fff;
-  color: #2f4f2f;
+  color: rgba(40, 74, 0, 1);
 }
 
 .top-banner {
@@ -187,4 +187,181 @@ header {
 
 .hero-image img {
   width: 100%;
+}
+
+.services {
+  text-align: center;
+  padding: 60px 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.services h2 {
+  font-size: 64px;
+  font-weight: 400;
+  color: rgba(40, 74, 0, 1);
+  margin-bottom: 16px;
+}
+
+.services p {
+  max-width: 600px;
+  margin: 0 auto 48px;
+  font-size: 16px;
+  font-weight: 400;
+  color: rgba(54, 61, 45, 1);
+}
+
+.services span {
+  font-size: 24px;
+  font-weight: 400;
+  color: rgba(40, 74, 0, 1);
+  margin-bottom: 24px;
+}
+
+.targets {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 40px;
+}
+
+.targets button {
+  border: none;
+  background: none;
+  font-size: 16px;
+  font-weight: 400;
+  padding: 8px;
+  cursor: pointer;
+  transition: 0.3s ease-in-out;
+  color: rgba(40, 74, 0, 1);
+  border-bottom: 1px solid transparent;
+}
+
+.targets button:hover,
+.targets button.active {
+  border-bottom: 1px solid rgba(40, 74, 0, 1);
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 15px;
+}
+
+.service-card {
+  position: relative;
+  max-width: 500px;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  cursor: pointer;
+}
+
+.service-card img {
+  width: 100%;
+  height: auto;
+  display: block;
+  transition: transform 0.5s ease;
+}
+
+.service-info {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  border-top-left-radius: 24px;
+  border-top-right-radius: 24px;
+  box-shadow: inset 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  background: rgba(255, 255, 255, 0.7);
+  padding: 20px;
+  box-sizing: border-box;
+  transition: transform 0.4s ease-in-out;
+}
+
+.service-info h4 {
+  margin: 0;
+  font-size: 20px;
+  font-weight: bold;
+  text-align: left;
+  color: rgba(10, 18, 1, 1);
+  transition: transform 0.4s ease-in-out;
+}
+
+.service-info p {
+  margin: 8px 0 0;
+  font-size: 16px;
+  color: rgba(10, 18, 1, 1);
+  text-align: left;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease-in-out, opacity 0.4s ease-in-out;
+  opacity: 0;
+}
+
+.service-card:hover img {
+  transform: scale(1.05);
+}
+
+.service-card:hover .service-info p {
+  max-height: 200px; /* достаточно для текста */
+  opacity: 1;
+}
+
+.service-card:hover .service-info h4 {
+  transform: translateY(-5px); /* заголовок чуть вверх */
+}
+
+/* .big {
+  grid-column: span 2;
+  height: 200px;
+}
+
+.tall {
+  grid-row: span 2;
+  height: 420px;
+}
+
+.normal {
+  height: 200px;
+} */
+
+.see-all {
+  display: inline-block;
+  padding: 16px 24px;
+  border: 1px solid rgba(40, 74, 0, 1);
+  border-radius: 50px;
+  color: rgba(40, 74, 0, 1);
+  font-size: 16px;
+  font-weight: 400;
+  text-decoration: none;
+  transition: 0.3s;
+  margin-top: 48px;
+}
+
+.see-all:hover {
+  background: rgba(40, 74, 0, 1);
+  color: #fff;
+}
+
+@media (max-width: 768px) {
+  .services-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+  .big,
+  .tall {
+    grid-column: span 2;
+    height: 200px;
+  }
+}
+
+@media (max-width: 480px) {
+  .services-grid {
+    grid-template-columns: 1fr;
+  }
+  .big,
+  .tall {
+    grid-column: span 1;
+    height: 200px;
+  }
 }
